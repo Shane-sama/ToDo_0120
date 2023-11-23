@@ -8,7 +8,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.footerContainer}>
-        <Button theme="primary" label="Hoi Button" />
+        <Button theme="primary" label="test" />
+        <Button theme="add" label="Add ToDo" />
       </View>
       <StatusBar style="auto" />
     </View>
