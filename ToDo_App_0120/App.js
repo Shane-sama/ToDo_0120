@@ -5,26 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const MainScreen = ({ navigation, todos, setTodos }) => {
   const deleteTodo = (index) => {
-    Alert.alert(
-      'Confirm Deletion',
-      'Are you sure you want to delete this ToDo?',
-      [
-        {
-          text: 'Cancel',
-          style: 'cancel',
-        },
-        {
-          text: 'Delete',
-          onPress: () => {
-            const newTodos = [...todos];
-            newTodos.splice(index, 1);
-            setTodos(newTodos);
-          },
-          style: 'destructive',
-        },
-      ],
-      { cancelable: true }
-    );
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
   return (
