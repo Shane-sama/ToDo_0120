@@ -1,13 +1,30 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const MainScreen = ({ navigation, todos, setTodos }) => {
   const deleteTodo = (index) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+    Alert.alert(
+      'Confirm Deletion',
+      'Are you sure you want to delete this ToDo?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Delete',
+          onPress: () => {
+            const newTodos = [...todos];
+            newTodos.splice(index, 1);
+            setTodos(newTodos);
+          },
+          style: 'destructive',
+        },
+      ],
+      { cancelable: true }
+    );
   };
 
   return (
