@@ -3,11 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Button from './components/Button';
 
-
+//<Text style={{ color: '#fff' }}>Hoi</Text>
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#fff' }}>Hoi</Text>
       <View style={styles.footerContainer}>
         <Button theme="primary" label="Hoi Button" />
       </View>

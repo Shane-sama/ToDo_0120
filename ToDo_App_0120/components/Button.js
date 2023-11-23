@@ -12,7 +12,6 @@ export default function Button({ label, theme }) {
                 onPress={() => alert('hmm...')}
                 >
                     <FontAwesome
-                        name="picture-o"
                         size={18}
                         color="#25292e"
                         style={styles.buttonIcon}
